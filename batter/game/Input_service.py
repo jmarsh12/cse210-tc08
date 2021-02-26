@@ -1,3 +1,3 @@
 """
-BRYSON.test
+Bryson
 """
