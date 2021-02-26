@@ -40,3 +40,7 @@ root                    (project root folder)
 ## Authors
 ---
 * # TODO: Add your names and emails here
+Bryson bryson.berrett19@gmail.com
+Jeff mar15035@byui.edu
+Craig wri17013@byui.edu
+Moon moo1a004@byui.edu
