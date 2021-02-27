@@ -8,7 +8,7 @@ class Action:
     within the game. All Action classes inherit Action.
     """
 
-def execute(self, cast):
+    def execute(self, cast):
         """Executes the action using the given actors.
 
         Args:
