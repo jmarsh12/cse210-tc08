@@ -1,14 +1,13 @@
 # Craig
 from game.actor import Actor
-from game.constants import Constants
+from game import constants
 from random import randint
 
 
 class Ball(Actor):
     def __init__(self):
         super().__init__()
-        constant = Constants()
-        self._position = ((constant.MAX_X / 2), (constant.MAX_Y - 1))
+        self._position = ((constants.MAX_X / 2), (constants.MAX_Y - 1))
         self.__set_velocity()  # sets self.velocity randomly between -4 and 4
         self._text = 'O'
 

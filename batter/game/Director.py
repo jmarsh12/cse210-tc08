@@ -26,19 +26,19 @@ class Director:
         self._cast = cast
         self._script = script
         
-    def start_game(self):
+    def start_game(self, screen):
         """Starts the game loop to control the sequence of play."""
         while True:
-            self._cue_action("input")
-            self._cue_action("update")
-            self._cue_action("output")
+            self._cue_action("input", screen)
+            self._cue_action("update", screen)
+            self._cue_action("output", screen)
             sleep(constants.FRAME_LENGTH)
 
-    def _cue_action(self, tag):
+    def _cue_action(self, tag, screen):
         """Executes the actions with the given tag.
         
         Args:
             tag (string): The given tag.
         """ 
         for action in self._script[tag]:
-            action.execute(self._cast)
+            action.execute(self._cast, screen)
