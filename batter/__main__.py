@@ -1,4 +1,5 @@
 import random
+import random
 from game import constants
 from game.director import Director
 from game.actor import Actor
@@ -10,47 +11,38 @@ from game.move_actors import MoveActorsAction
 from game.input_service import InputService
 from game.output_service import OutputService
 from asciimatics.screen import Screen 
-from game.Paddle import Paddle
-from game.Ball import Ball
-from game.Brick import Brick
 
 def main(screen):
 
     # create the cast {key: tag, value: list}
     cast = {}
 
-    # x = int(constants.MAX_X / 2)
-    # y = int(constants.MAX_Y - 1)
-    # position = Point(x, y)
-    paddle = Paddle()
-    # paddle.set_text("===========")
-    # paddle.set_position(position)
+    x = int(constants.MAX_X / 2)
+    y = int(constants.MAX_Y - 1)
+    position = Point(x, y)
+    paddle = Actor()
+    paddle.set_text("===========")
+    paddle.set_position(position)
     cast["paddle"] = [paddle]
+    # cast = {'paddle' : paddle, 'brick' : [* ]}
 
     cast["bricks"] = []
     for x in range(5, 75):
         for y in range(2, 6):
-            brick = Brick(x, y)
+            position = Point(x, y)
+            brick = Actor()
+            brick.set_text("*")
+            brick.set_position(position)
             cast["bricks"].append(brick)
-
-    # cast["brick"] = []
-    # for x in range(5, 75):
-    #     for y in range(2, 6):
-    #         position = Point(x, y)
-    #         brick = Actor()
-    #         brick.set_text("*")
-    #         brick.set_position(position)
-    #         cast["brick"].append(brick)
 
     x = int(constants.MAX_X / 2)
     y = int(constants.MAX_Y / 2)
-    
-    # position = Point(x, y)
-    # velocity = Point(1, -1)
+    position = Point(x, y)
+    velocity = Point(1, -1)
     ball = Actor()
-    # ball.set_text("@")
-    # ball.set_position(position)
-    # ball.set_velocity(velocity)
+    ball.set_text("@")
+    ball.set_position(position)
+    ball.set_velocity(velocity)
     cast["ball"] = [ball]
     
     # create the script {key: tag, value: list}
