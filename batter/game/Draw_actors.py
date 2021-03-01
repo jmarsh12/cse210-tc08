@@ -28,6 +28,6 @@ class DrawActorsAction(Action):
         """
         self._output_service.clear_screen()
 
-        for actor in cast.value():
+        for actor in cast.values():
             self._output_service.draw_actors(actor)
         self._output_service.flush_buffer()
