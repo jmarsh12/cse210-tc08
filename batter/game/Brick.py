@@ -5,10 +5,9 @@ from game.actor import Actor
 class Brick(Actor):
     def __init__(self):
         super().__init__()
-        self.set_position()
-        self.set_velocity(0, 0)
+        self._velocity(0, 0)
         self._text = '*'
-
+        self._position = (0, 0)
 
     def set_position(self, point):
         self._position = point
