@@ -10,6 +10,10 @@ class Paddle(Actor):
         self._position = ((constant.MAX_X / 2), constant.MAX_Y)
         self._text = '=========='
 
+    def set_position(self, position):
+        self._position = position
+        return self._position
+
     def get_position(self):
         return self._position
 
