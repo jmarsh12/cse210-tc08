@@ -9,7 +9,7 @@ class MoveActorsAction(Action):
 
     
     def execute(self, cast):
-        """Loops throught all of the actors within cast and 
+        """Loops through all of the actors within cast and
         Executes the action using the given actors.
 
         Args:
@@ -19,10 +19,9 @@ class MoveActorsAction(Action):
             for actor in group:
                 if not actor.get_velocity().is_zero():
                     self._move_actor(actor)
+
     def _move_actor(self, actor):
-        """Moves the given actor to its next position according to its 
-        velocity. Will wrap the position from one side of the screen to the 
-        other when it reaches the edge in either direction.
+        """Moves the given actor to its next position according to its velocity.
         
         Args:
             actor (Actor): The actor to move.
