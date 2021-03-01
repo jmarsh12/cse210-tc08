@@ -39,7 +39,7 @@ class HandleCollisionsAction(Action):
             #     ball.set_velocity(velocity.reverse_y())
 
             for i in range(paddle.get_position().get_x(), paddle.get_position().get_x()+11):
-                if position.get_x() == i and (position.get_x() == 1 or position.get_x() == constants.MAX_X ):
+                if position.get_x() == i and (position.get_x() == 0 or position.get_x() == constants.MAX_X ):
                     ball.set_velocity(velocity.reverse())
                     #ball.set_velocity(velocity.reverse_y())
                     

@@ -10,10 +10,10 @@ class Paddle(Actor):
     def __init__(self):
         super().__init__()
         #constant = Constants()
-        position = Point((constants.MAX_X / 2), constants.MAX_Y - 1)
+        position = Point(int(constants.MAX_X / 2), constants.MAX_Y - 1)
         self.set_position(position)
         self.set_velocity(Point(0, 0))
-        self.set_text = '==========='
+        self.set_text('===========')
         
         # x = int(constants.MAX_X / 2)
         # y = int(constants.MAX_Y - 1)

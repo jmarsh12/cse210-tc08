@@ -11,7 +11,7 @@ from game.input_service import InputService
 from game.output_service import OutputService
 from asciimatics.screen import Screen 
 
-from game.paddle import Paddle
+from game.Paddle import Paddle
 from game.Ball import Ball
 from game.Brick import Brick
 
