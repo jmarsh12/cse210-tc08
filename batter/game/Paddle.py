@@ -1,13 +1,12 @@
 # Craig
 from game.actor import Actor
-from GAME.constants import Constants
+from game import constants
 
 
 class Paddle(Actor):
     def __init__(self):
         super().__init__()
-        constant = Constants()
-        self._position = ((constant.MAX_X / 2), constant.MAX_Y)
+        self._position = ((constants.MAX_X / 2), constants.MAX_Y)
         self._text = '=========='
 
     def get_position(self):

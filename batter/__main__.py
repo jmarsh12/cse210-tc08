@@ -9,11 +9,11 @@ from game.handle_collisions import HandleCollisionsAction
 from game.move_actors import MoveActorsAction
 from game.input_service import InputService
 from game.output_service import OutputService
-from asciimatics.screen import Screen
-
 from game.paddle import Paddle
 from game.ball import Ball
 from game.brick import Brick
+from asciimatics.screen import Screen
+
 
 def main(screen):
 
@@ -27,12 +27,10 @@ def main(screen):
     ball = Ball()
     brick = Brick()
     cast["paddle"] = [paddle]
-
     cast["brick"] = [brick]
     for x in range(5, 75):
         for y in range(2, 6):
             position = Point(x, y)
-            brick = Brick()
             brick.set_position(position)
             cast["brick"].append(brick)
 
@@ -59,6 +57,6 @@ def main(screen):
 
     # start the game
     director = Director(cast, script)
-    director.start_game()
+    director.start_game(screen)
 
 Screen.wrapper(main)
