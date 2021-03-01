@@ -57,6 +57,6 @@ def main(screen):
 
     # start the game
     director = Director(cast, script)
-    director.start_game(screen)
+    director.start_game()
 
 Screen.wrapper(main)
