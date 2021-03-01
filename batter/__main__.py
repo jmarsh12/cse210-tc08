@@ -1,5 +1,4 @@
 import random
-import random
 from game import constants
 from game.director import Director
 from game.actor import Actor
@@ -12,55 +11,38 @@ from game.input_service import InputService
 from game.output_service import OutputService
 from asciimatics.screen import Screen 
 
-def main(screen):
+from game.paddle import Paddle
+from game.Ball import Ball
+from game.Brick import Brick
 
+def main(screen):
     # create the cast {key: tag, value: list}
     cast = {}
-
-    x = int(constants.MAX_X / 2)
-    y = int(constants.MAX_Y - 1)
-    position = Point(x, y)
-    paddle = Actor()
-    paddle.set_text("===========")
-    paddle.set_position(position)
+    paddle = Paddle()
     cast["paddle"] = [paddle]
-    # cast = {'paddle' : paddle, 'brick' : [* ]}
-
+    
+    cast["ball"] = []
+    
+    ball = Ball()
+    cast["ball"] = [ball]
+    
     cast["bricks"] = []
     for x in range(5, 75):
         for y in range(2, 6):
-            position = Point(x, y)
-            brick = Actor()
-            brick.set_text("*")
-            brick.set_position(position)
+            brick = Brick(x, y)
             cast["bricks"].append(brick)
-
-    x = int(constants.MAX_X / 2)
-    y = int(constants.MAX_Y / 2)
-    position = Point(x, y)
-    velocity = Point(1, -1)
-    ball = Actor()
-    ball.set_text("@")
-    ball.set_position(position)
-    ball.set_velocity(velocity)
-    cast["ball"] = [ball]
-    
     # create the script {key: tag, value: list}
     script = {}
-
     input_service = InputService(screen)
     output_service = OutputService(screen)
     control_actors_action = ControlActorsAction(input_service)
     move_actors_action = MoveActorsAction()
-    handle_collisions_acition = HandleCollisionsAction()
+    handle_collisions_action = HandleCollisionsAction()
     draw_actors_action = DrawActorsAction(output_service)
-    
     script["input"] = [control_actors_action]
-    script["update"] = [move_actors_action, handle_collisions_acition]
+    script["update"] = [move_actors_action, handle_collisions_action]
     script["output"] = [draw_actors_action]
-
     # start the game
     director = Director(cast, script)
     director.start_game()
-
 Screen.wrapper(main)
