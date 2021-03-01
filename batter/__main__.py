@@ -9,7 +9,11 @@ from game.handle_collisions import HandleCollisionsAction
 from game.move_actors import MoveActorsAction
 from game.input_service import InputService
 from game.output_service import OutputService
-from asciimatics.screen import Screen 
+from asciimatics.screen import Screen
+
+from game.paddle import Paddle
+from game.ball import Ball
+from game.brick import Brick
 
 def main(screen):
 
@@ -19,28 +23,24 @@ def main(screen):
     x = int(constants.MAX_X / 2)
     y = int(constants.MAX_Y - 1)
     position = Point(x, y)
-    paddle = Actor()
-    paddle.set_text("===========")
-    paddle.set_position(position)
+    paddle = Paddle()
+    ball = Ball()
+    brick = Brick()
     cast["paddle"] = [paddle]
 
-    cast["brick"] = []
+    cast["brick"] = [brick]
     for x in range(5, 75):
         for y in range(2, 6):
             position = Point(x, y)
-            brick = Actor()
-            brick.set_text("*")
+            brick = Brick()
             brick.set_position(position)
             cast["brick"].append(brick)
 
     x = int(constants.MAX_X / 2)
     y = int(constants.MAX_Y / 2)
-    position = Point(x, y)
-    velocity = Point(1, -1)
-    ball = Actor()
-    ball.set_text("@")
-    ball.set_position(position)
-    ball.set_velocity(velocity)
+    # position = Point(x, y)
+    # velocity = Point(1, -1)
+
     cast["ball"] = [ball]
     
     # create the script {key: tag, value: list}
