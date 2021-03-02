@@ -11,9 +11,9 @@ from game.input_service import InputService
 from game.output_service import OutputService
 from asciimatics.screen import Screen 
 
-from game.Paddle import Paddle
-from game.Ball import Ball
-from game.Brick import Brick
+from game.paddle import Paddle
+from game.ball import Ball
+from game.brick import Brick
 
 def main(screen):
     # create the cast {key: tag, value: list}
