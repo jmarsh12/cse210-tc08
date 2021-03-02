@@ -26,14 +26,6 @@ class Actor:
         self._position = Point(0, 0)
         self._velocity = Point(0, 0)
 
-    # def get_description(self):
-    #     """Gets the artifact's description.
-    #
-    #     Returns:
-    #         string: The artifact's description.
-    #     """
-    #     return self._description
-
     def get_position(self):
         """Gets the actor's position in 2d space.
         
@@ -57,14 +49,6 @@ class Actor:
             Point: The actor's speed and direction.
         """
         return self._velocity
-    
-    # def set_description(self, description):
-    #     """Updates the actor's description to the given one.
-    #
-    #     Args:
-    #         description (string): The given description.
-    #     """
-    #     self._description = description
 
     def set_position(self, position):
         """Updates the actor's position to the given one.
