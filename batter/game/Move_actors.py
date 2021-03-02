@@ -45,24 +45,24 @@ class MoveActorsAction(Action):
         if actor.get_text() == "===========":
             if x1 == constants.MAX_X - 8:
                 if x2 == -4:
-                    x = 1 + (x1 + x2 - 1) # % (constants.MAX_X - 1)
-                    y = 1 + (y1 + y2 - 1) # % (constants.MAX_Y - 1)
+                    x = 1 + (x1 + x2 - 1)
+                    y = 1 + (y1 + y2 - 1) 
                     position = Point(x, y)
                 else:    
                     position = Point(x1, y1)
             elif x1 == 0:
                 if x2 == 4:
-                    x = 1 + (x1 + x2 - 1) # % (constants.MAX_X - 1)
-                    y = 1 + (y1 + y2 - 1) # % (constants.MAX_Y - 1)
+                    x = 1 + (x1 + x2 - 1)
+                    y = 1 + (y1 + y2 - 1) 
                     position = Point(x, y)
                 else: 
                     position = Point(x1, y1)
             else:
-                x = 1 + (x1 + x2 - 1) # % (constants.MAX_X - 1)
-                y = 1 + (y1 + y2 - 1) # % (constants.MAX_Y - 1)
+                x = 1 + (x1 + x2 - 1)
+                y = 1 + (y1 + y2 - 1)
                 position = Point(x, y)
         else:
-            x = 1 + (x1 + x2 - 1) # % (constants.MAX_X - 1)
-            y = 1 + (y1 + y2 - 1) # % (constants.MAX_Y - 1)
+            x = 1 + (x1 + x2 - 1) 
+            y = 1 + (y1 + y2 - 1) 
             position = Point(x, y)
         actor.set_position(position)
