@@ -22,13 +22,13 @@ class ControlActorsAction(Action):
         super().__init__()
         self._input_service = input_service
 
-    def execute(self, cast):
+    def execute(self, cast, screen):
         """
         The purpose of this method is to execute the actions for the given actors.
 
         Params:
             cast (dictionary)
         """
-        direction = self._input_service.get_direction()
+        direction = self._input_service.get_direction(screen)
         paddle = cast["paddle"][0]
-        paddle.set_velocity(direction)
+        paddle.set_position(direction)

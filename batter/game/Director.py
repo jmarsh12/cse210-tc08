@@ -42,3 +42,4 @@ class Director:
         """ 
         for action in self._script[tag]:
             action.execute(self._cast)
+            action.execute(self._cast)

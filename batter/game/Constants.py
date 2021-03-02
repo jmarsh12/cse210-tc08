@@ -1,8 +1,11 @@
 """
-Anyone
+Jeff
 """
 import os
 
 MAX_X = 80
 MAX_Y = 20
-FRAME_LENGTH = 0.1#0.1
+FRAME_LENGTH = 0.1
+PATH = os.path.dirname(os.path.abspath(__file__))
+ARTIFACTS = 30
+NUM_BALLS = 1

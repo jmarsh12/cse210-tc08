@@ -26,6 +26,10 @@ class InputService:
         self._keys[100] = Point(4, 0) # d
         
     def get_direction(self):
+        self._keys[27] = Point(-4, 0) # a
+        self._keys[26] = Point(4, 0) # d
+
+    def get_direction(self, screen):
         """Gets the selected direction for the given player.
 
         Returns:

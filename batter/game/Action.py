@@ -10,6 +10,9 @@ class Action:
 
     Attributes:
         _tag (string): The action tag (input, update or output).
+    The class for anything procedure or operation done within the game.
+    This class contains the things that Actors do to change and interact
+    within the game. All Action classes inherit Action.
     """
 
     def execute(self, cast):

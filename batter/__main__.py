@@ -9,7 +9,11 @@ from game.handle_collisions import HandleCollisionsAction
 from game.move_actors import MoveActorsAction
 from game.input_service import InputService
 from game.output_service import OutputService
-from asciimatics.screen import Screen 
+from game.paddle import Paddle
+from game.ball import Ball
+from game.brick import Brick
+from asciimatics.screen import Screen
+
 
 from game.Paddle import Paddle
 from game.Ball import Ball
@@ -18,12 +22,35 @@ from game.Brick import Brick
 def main(screen):
     # create the cast {key: tag, value: list}
     cast = {}
+
     paddle = Paddle()
     cast["paddle"] = [paddle]
     
     cast["ball"] = []
     
     ball = Ball()
+
+
+    x = int(constants.MAX_X / 2)
+    y = int(constants.MAX_Y - 1)
+    position = Point(x, y)
+    paddle = Paddle()
+    ball = Ball()
+    brick = Brick()
+    cast["paddle"] = [paddle]
+    cast["brick"] = [brick]
+    for x in range(5, 75):
+        for y in range(2, 6):
+            position = Point(x, y)
+            brick.set_position(position)
+            cast["brick"].append(brick)
+
+    x = int(constants.MAX_X / 2)
+    y = int(constants.MAX_Y / 2)
+    # position = Point(x, y)
+    # velocity = Point(1, -1)
+
+
     cast["ball"] = [ball]
     
     cast["bricks"] = []

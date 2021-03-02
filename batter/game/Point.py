@@ -11,8 +11,8 @@ class Point:
     Attributes:
         _x (integer): The horizontal distance.
         _y (Point): The vertical distance.
+    The purpose of this class is to represent a distance from the origin (0, 0).
     """
-    
     def __init__(self, x, y):
         """The class constructor.
         
@@ -31,6 +31,7 @@ class Point:
 
         Returns:
             Point: A new Point that is the sum.
+    def is_equal(self, other):
         """
         x = self._x + other.get_x()
         y = self._y + other.get_y()
@@ -48,10 +49,28 @@ class Point:
         return self._x == other.get_x() and self._y == other.get_y()
 
     def get_x(self):
-        """Gets the horizontal distance.
+        """
+        Gets the horizontal distance.
         
         Returns:
             integer: The horizontal distance.
+        """
+    def add(self, other):
+        """Gets a new point that is the sum of this and the given one.
+
+        Args:
+            other (Point): The Point to add.
+
+        Returns:
+            Point: A new Point that is the sum.
+        """
+        x = self._x + other.get_x()
+        y = self._y + other.get_y()
+        return Point(x, y)
+
+    def get_x(self):
+        """
+        This returns the horizontal distance.
         """
         return self._x
 
@@ -60,6 +79,7 @@ class Point:
         
         Returns:
             integer: The vertical distance.
+        This returns the vertical distance.
         """
         return self._y
 
@@ -76,7 +96,16 @@ class Point:
         
         Returns:
             Point: A new Point that is reversed.
+
+        Checks if the point of the paddle is zero.
+
+        Returns a boolean; if x = 0 and y = 0 it's True, and False if otherwise.
+        return self._x == 0 and self._y == 0
+
+        def reverse(self):
+        This allows for the actors to be reversed.
         """
+
         x = self._x * -1
         y = self._y * -1
         return Point(x, y)
