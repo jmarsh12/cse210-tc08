@@ -11,7 +11,7 @@ class Brick(Actor):
         point = Point(x, y)
         self.set_position(point)
         self.set_velocity(Point(0, 0))
-        self.set_text = '*'
+        self.set_text('*')
 
         # cast["brick"] = []
         # for x in range(5, 75):
