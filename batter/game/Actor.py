@@ -4,8 +4,9 @@ Craig
 from game import constants
 from game.point import Point
 
+
 class Actor:
-    """A visible, moveable thing that participates in the game. The responsibility of Actor is to keep track of its appearance, position 
+    """A visible, movable thing that participates in the game. The responsibility of Actor is to keep track of its appearance, position
     and velocity in 2d space.
 
     Stereotype:
@@ -25,13 +26,13 @@ class Actor:
         self._position = Point(0, 0)
         self._velocity = Point(0, 0)
 
-    def get_description(self):
-        """Gets the artifact's description.
-        
-        Returns:
-            string: The artifact's description.
-        """
-        return self._description 
+    # def get_description(self):
+    #     """Gets the artifact's description.
+    #
+    #     Returns:
+    #         string: The artifact's description.
+    #     """
+    #     return self._description
 
     def get_position(self):
         """Gets the actor's position in 2d space.
@@ -57,13 +58,13 @@ class Actor:
         """
         return self._velocity
     
-    def set_description(self, description):
-        """Updates the actor's description to the given one.
-        
-        Args:
-            description (string): The given description.
-        """
-        self._description = description
+    # def set_description(self, description):
+    #     """Updates the actor's description to the given one.
+    #
+    #     Args:
+    #         description (string): The given description.
+    #     """
+    #     self._description = description
 
     def set_position(self, position):
         """Updates the actor's position to the given one.
@@ -85,6 +86,6 @@ class Actor:
         """Updates the actor's velocity to the given one.
         
         Args:
-            position (Point): The given velocity.
+            velocity (Point): The given velocity.
         """
         self._velocity = velocity
